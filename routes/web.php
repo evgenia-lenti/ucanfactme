@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/facts', 'FactController@index');
+
+Route::get('/facts/{fact}', 'FactController@show');

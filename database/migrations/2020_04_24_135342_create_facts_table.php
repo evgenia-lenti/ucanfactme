@@ -16,9 +16,9 @@ class CreateFactsTable extends Migration
         Schema::create('facts', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('title');
-            $table->string('subtitle');
+            $table->string('subtitle')->nullable();
             $table->string('content');
-            $table->dateTime('pubish_date');
+            $table->dateTime('publish_date');
             $table->string('source');
             $table->string('author_id');
             $table->timestamps();
