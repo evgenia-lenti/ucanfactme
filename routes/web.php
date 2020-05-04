@@ -25,3 +25,5 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/facts', 'FactController@index');
 
 Route::get('/facts/{fact}', 'FactController@show');
+
+Route::get('/tags', 'TagController@index');

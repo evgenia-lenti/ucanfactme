@@ -16,4 +16,9 @@ class Fact extends Model
         return $this->publish_date->toFormattedDateString();
     }
 
+    public function tags()
+    {
+        return $this->belongsToMany('App\Tag');
+    }
+
 }

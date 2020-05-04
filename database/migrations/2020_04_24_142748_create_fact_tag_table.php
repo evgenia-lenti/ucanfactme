@@ -15,11 +15,18 @@ class CreateFactTagTable extends Migration
     {
         Schema::create('fact_tag', function (Blueprint $table) {
 
-            $table->unsignedBigInteger('fact_id');
-            $table->unsignedBigInteger('tag_id');
+            //$table->unsignedBigInteger('fact_id');
+            //$table->unsignedBigInteger('tag_id');
 
-            $table->foreign('fact_id')->references('id')->on('facts');
-            $table->foreign('tag_id')->references('id')->on('tags');
+            //$table->foreign('fact_id')->references('id')->on('facts');
+            //$table->foreign('tag_id')->references('id')->on('tags');
+
+            $table->foreignId('fact_id')
+            ->constrained()
+            ->onDelete('cascade');
+            $table->foreignId('tag_id')
+            ->constrained()
+            ->onDelete('cascade');
 
         });
     }
